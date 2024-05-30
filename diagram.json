@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "author": "Alexander Li",
+  "editor": "Alex",
+  "parts": [
+    { "type": "board-pi-pico-w", "id": "pico", "top": 303.95, "left": 22.75, "attrs": {} },
+    {
+      "type": "board-ssd1306",
+      "id": "board-ssd1306-0",
+      "top": 502.34,
+      "left": 144.23,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "wokwi-buzzer-0",
+      "top": 273.9,
+      "left": -290.7,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-rgb-led",
+      "id": "wokwi-rgb-led-0",
+      "top": 301.6,
+      "left": -334.9,
+      "attrs": { "common": "anode" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "wokwi-hc-sr04-0",
+      "top": 135.9,
+      "left": -196.1,
+      "attrs": { "distance": "400" }
+    }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "red", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "red", [] ],
+    [ "pico:GP3", "wokwi-hc-sr04-0:TRIG", "red", [] ],
+    [ "pico:GP2", "wokwi-hc-sr04-0:ECHO", "red", [] ],
+    [ "pico:GP6", "wokwi-rgb-led-0:R", "red", [] ],
+    [ "pico:GP7", "wokwi-rgb-led-0:G", "red", [] ],
+    [ "pico:GP8", "wokwi-rgb-led-0:B", "red", [] ],
+    [ "pico:GND.1", "board-ssd1306-0:GND", "red", [] ],
+    [ "pico:3V3", "board-ssd1306-0:VCC", "red", [] ],
+    [ "pico:GP4", "board-ssd1306-0:SDA", "red", [] ],
+    [ "pico:GP5", "board-ssd1306-0:SCL", "red", [] ],
+    [ "pico:3V3", "wokwi-rgb-led-0:COM", "red", [ "h0" ] ],
+    [ "pico:GND.1", "wokwi-buzzer-0:2", "black", [ "h0" ] ],
+    [ "pico:GP9", "wokwi-buzzer-0:1", "black", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
