@@ -109,4 +109,6 @@ float getDistance() {
 void setColor(int red, int green, int blue) {
   digitalWrite(redPin, red > 0 ? LOW : HIGH); 
   digitalWrite(greenPin, green > 0 ? LOW : HIGH); 
-  digitalWrite(bluePin, blue > 0 ? LOW : HIGH); 
+  digitalWrite(bluePin, blue > 0 ? LOW : HIGH)
+}
+
